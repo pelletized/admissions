@@ -1,0 +1,710 @@
+/*
+Theme Name: UG Admissions
+Theme URI: http://www.nyu.edu
+Description: This is the theme for NYU Admissions blog.
+Author: NYU Digital Communications
+Author URI: http://www.nyu.edu/digital.communications
+Version: 1.0
+*/
+
+
+/* -- reset -- */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+display:block;
+}
+
+header, footer, article, section, body, blockquote, form, ul, li, p, a, img, h1, h2, h3, h4, h5, h6 { 
+border:0;
+margin:0;
+padding:0;
+} 
+
+ul, li {
+list-style-type:none;
+}
+
+button {
+border:0;
+cursor:pointer;
+} 
+
+a {text-decoration:none;}
+a:hover {text-decoration:underline;}
+
+/* - - - *COMMON - - - */
+.left {float:left;}
+.right {float:right;}
+.off-left {
+text-indent:-9999px;
+}
+
+label {
+position:absolute;
+left:-9999px;
+}
+
+
+.clearfix:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+
+/* - - - *TYPOGRAPHY - - - */
+@font-face { 
+	font-family: 'Museo Slab';
+	src: url('fonts/Museo_Slab_300-webfont.eot');
+	src: url('fonts/Museo_Slab_300-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/Museo_Slab_300-webfont.woff') format('woff'),
+	     url('fonts/Museo_Slab_300-webfont.ttf') format('truetype'),
+	     url('fonts/Museo_Slab_300-webfont.svg#webfont') format('svg');
+}
+
+@font-face { 
+	font-family: 'Museo Slab 100';
+	src: url('fonts/Museo_Slab_100-webfont.eot');
+	src: url('fonts/Museo_Slab_100-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/Museo_Slab_100-webfont.woff') format('woff'),
+	     url('fonts/Museo_Slab_100-webfont.ttf') format('truetype'),
+	     url('fonts/Museo_Slab_100-webfont.svg#webfont') format('svg');
+}
+
+@font-face { 
+	font-family: 'Museo Slab Bold';
+	src: url('fonts/Museo_Slab_900-webfont.eot');
+	src: url('fonts/Museo_Slab_900-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/Museo_Slab_900-webfont.woff') format('woff'),
+	     url('fonts/Museo_Slab_900-webfont.ttf') format('truetype'),
+	     url('fonts/Museo_Slab_900-webfont.svg#webfont') format('svg');
+}
+
+@font-face { 
+	font-family: 'Museo Slab Italic';
+	src: url('fonts/Museo_Slab_300italic-webfont.eot');
+	src: url('fonts/Museo_Slab_300italic-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/Museo_Slab_300italic-webfont.woff') format('woff'),
+	     url('fonts/Museo_Slab_300italic-webfont.ttf') format('truetype'),
+	     url('fonts/Museo_Slab_300italic-webfont.svg#webfont') format('svg');
+}
+
+@font-face { 
+	font-family: 'Museo Slab Bold Italic';
+	src: url('fonts/Museo_Slab_900italic-webfont.eot');
+	src: url('fonts/Museo_Slab_900italic-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/Museo_Slab_900italic-webfont.woff') format('woff'),
+	     url('fonts/Museo_Slab_900italic-webfont.ttf') format('truetype'),
+	     url('fonts/Museo_Slab_900italic-webfont.svg#webfont') format('svg');
+}
+
+@font-face { 
+	font-family: 'Museo Sans';
+	src: url('fonts/MuseoSans_300-webfont.eot');
+	src: url('fonts/MuseoSans_300-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/MuseoSans_300-webfont.woff') format('woff'),
+	     url('fonts/MuseoSans_300-webfont.ttf') format('truetype'),
+	     url('fonts/MuseoSans_300-webfont.svg#webfont') format('svg');
+}
+
+@font-face { 
+	font-family: 'Museo Sans Bold';
+	src: url('fonts/MuseoSans_900-webfont.eot');
+	src: url('fonts/MuseoSans_900-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/MuseoSans_900-webfont.woff') format('woff'),
+	     url('fonts/MuseoSans_900-webfont.ttf') format('truetype'),
+	     url('fonts/MuseoSans_900-webfont.svg#webfont') format('svg');
+}
+
+h1, .h1 {
+font-family: 'Museo Slab 100', 'times new roman', serif;
+}
+
+h1 a:hover, .h1 a:hover {
+text-decoration:none;
+}
+
+body, p {
+font:normal 15px/21px 'Museo Slab', 'times new roman', serif;
+margin-bottom:10px;
+}
+
+blockquote {
+font:normal 15px/21px 'Museo Sans', arial, helvetica, sans-serif;
+margin-left:95px;
+}
+
+b, strong {
+font-family:'Museo Slab Bold', 'times new roman', serif;
+}
+
+i, em {
+font-family:'Museo Slab Italic', 'times new roman', serif;
+}
+
+b > i, b > em, strong > i, strong > em,
+i > b, em > b, i > strong, em > strong {
+font-family: 'Museo Slab Bold Italic'
+}
+
+.home, #main, .entry-content, a {
+color:#8c3b3b;
+}
+
+.uppercase {
+text-transform:uppercase;
+}
+
+.serif {
+font-family:'Museo Slab', 'times new roman', serif;
+}
+
+.sans-serif {
+font-family:'Museo Sans', arial, helvetica, sans-serif;
+}
+
+/* - - - *STRUCTURE - - - */
+body {
+background:url(images/bg.jpg) no-repeat 0 0 fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+#container {
+width:945px;
+margin:0 auto;
+}
+
+.wrap {
+position:relative;
+width:100%;
+max-width:945px;
+margin:0 auto;
+}
+
+/* - - - *header - - - */
+.header {
+position:relative;
+height:240px;
+}
+
+#header-top {
+position:relative;
+background-color:#57068c;
+width:100%;
+height:70px;
+}
+
+.header h1, .header .h1 {
+margin-top:25px;
+width:400px;
+font-weight:normal;
+}
+
+#header-top li {
+display:block;
+padding-top:20px;
+}
+
+.logo {background:url(images/sprites.png) no-repeat 0 0;}
+
+#logo-nyu {
+float:left;
+width:177px;
+height:31px;
+}
+
+#logo-uga {
+float:right;
+width:254px;
+height:19px;
+background-position:0 -40px;
+margin-top:-15px;
+}
+
+.header  a, .header .h1 a {
+font-size:48px;
+line-height:48px;
+color:#FFF;
+}
+
+#searchform {
+position:relative;
+top:85px;
+}
+
+#searchform input[type='text'] {
+position:absolute;
+right:0;
+width:175px;
+padding:5px;
+border:0;
+border-radius:10px;
+font-size:12px;
+}
+
+#searchform button {
+position:absolute;
+top:2px;
+right:1px;
+background:url(images/sprites.png) no-repeat -200px 0;
+width:22px;
+height:23px;
+}
+
+/* - - - *main - - - */
+#main {
+float:left;
+width:100%;
+max-width:700px;
+margin:0 0 20px 0;
+padding:0 20px 20px 20px;
+background:#FFF;
+
+-webkit-border-top-left-radius: 10px;
+-webkit-border-top-right-radius: 10px;
+-moz-border-radius-topleft: 10px;
+-moz-border-radius-topright: 10px;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+}
+
+.post-bottom {
+background:url(images/post-bottom.png) repeat-x 0 100%;
+height: 7px;
+margin:0 -20px -27px;
+padding-top:20px;
+}
+
+/* - - - *home page - - - */
+.homepage-content {
+float:left;
+width:760px;
+}
+
+.home-post {
+position:relative;
+float:left;
+width:100%;
+max-width:360px;
+width:360px;
+margin:0 20px 20px 0;
+padding:0 0 20px 0;
+background:#FFF;
+
+-webkit-border-top-left-radius: 10px;
+-webkit-border-top-right-radius: 10px;
+-moz-border-radius-topleft: 10px;
+-moz-border-radius-topright: 10px;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+}
+
+.home-post .article-header {
+margin:10px;
+}
+
+.home-post h2 {
+font-weight:normal;
+margin-top:10px;
+}
+
+.home-post .entry-content {
+float:none;
+width:100%;
+margin:0;
+padding:0;
+}
+
+.home-post .entry-content p {
+margin:0 10px;
+}
+
+.home-post .entry-content img {
+max-width:340px;
+}
+
+.home-post a.more-link, .home-post a.read_more {
+display:block;
+width:100px;
+font-weight:bold;
+color:#8c3b3b;
+text-decoration:none;
+}
+
+.home-post-thumbnail img {
+width:100%;
+max-width:360px;
+}
+
+/* - - - *home-post-meta - - - */
+.home-post-meta {
+margin-top:10px;
+font:normal 11px 'Museo Sans', arial, helvetica, sans-serif;
+}
+
+.home-post-meta .post-author-avatar {
+float:left;
+border-right:1px dotted #777;
+}
+
+.home-post-meta .home-meta-social {
+float:left;
+width:110px;
+border:0;
+}
+
+.home-post-meta .home-meta-social li {
+float:left;
+height:30px;
+margin:0;
+padding:10px 0 0 10px;
+}
+
+.home-post-meta .post-date {
+float:left;
+width:160px;
+height:25px;
+padding-top:15px;
+font-weight:bold;
+text-align:right;
+border-left:1px dotted #777;
+}
+
+.home-post .post-author {
+float:left;
+width:275px;
+}
+
+.home-post .post-author h5 {
+font:normal 13px/16px 'Museo Slab','times new roman',serif;
+margin:0;
+padding:10px 0 0 10px;
+}
+
+.home-post-meta a {
+color:#00a388;
+}
+
+.home-post .post-bottom {
+background:url(images/post-bottom.png) repeat-x 0 100%;
+height: 7px;
+margin:0 0 -27px 0;
+}
+
+/* - - - *single page - - - */
+.article-header {
+margin:7px 0 25px;
+padding-top:7px;
+}
+
+.article-header h1, .article-header .h1 {
+margin-top:11px;
+font-size:36px;
+color:#2e0927;
+}
+
+.article-header a {
+color:#2e0927;
+}
+
+.article-header .category {
+text-transform:uppercase;
+font:normal 11px/11px 'Museo Slab Bold', 'times new roman', serif;
+color:#2e0927;
+}
+
+.entry-content {
+float:left;
+width:530px;
+margin-left:20px;
+}
+
+.entry-content a {
+text-decoration:underline;
+}
+
+.entry-content a:hover {
+color:#2E0927;
+}
+
+.entry-content li {
+list-style-type:disc;
+}
+
+.byline, .byline a {
+margin-top:10px;
+font-size:11px;
+color:#5a1f00;
+}
+
+/* - - - post meta - - - */
+.post-meta, .post-meta p {
+font:normal 11px/15px 'Museo Sans', arial, helvetica, sans-serif;
+}
+
+.post-meta {
+float:left;
+width:150px;
+color:#00a388;
+}
+
+.post-meta a {
+color:#00a388;
+}
+
+.meta-social {
+border-top:1px dotted #777;
+border-bottom:1px dotted #777;
+margin-bottom:20px;
+font-family:'Museo Slab', 'times new roman', serif;
+}
+
+.meta-social li {
+float:left;
+padding:15px 0;
+}
+
+li.meta-likes {
+width:52px;
+border-right:1px dotted #777;
+padding-left:3px;
+}
+
+.meta-likes .button, .meta-likes .addthis_button, .meta-likes .addthis_button_expanded {
+display:inline-block;
+background:url(images/sprites.png) no-repeat 0 -65px;
+width:16px;
+height:16px;
+margin:2px 0 0 3px;
+padding:0;
+cursor:pointer;
+}
+
+
+.addthis_counter {
+color:#00A388;
+margin:2px 0 0 20px;
+padding:0;
+font-weight:normal;
+}
+
+li.meta-comments {
+padding-left:18px;
+}
+
+.meta-comments .button {
+display:inline-block;
+background:url(images/sprites.png) no-repeat 0 -83px;
+width:16px;
+height:16px;
+}
+
+.author-name {
+padding:20px 0;
+font:bold 11px 'Museo Sans', arial, helvetica, sans-serif;
+border-top:1px dotted #777;
+}
+
+.archive h2 {
+font-weight:normal;
+}
+
+/* - - - *author - - */
+.author .author-meta {
+float:left;
+width:245px;
+font-size:13px;
+}
+
+.author .entry-content {
+width:430px;
+}
+
+.author .author-avatar {
+padding-bottom:15px;
+border-bottom:1px dotted #777;
+}
+
+/* - - - *comments - - - */
+.comment-form h4, #leave-reply, .author h4 {
+font-size:21px;
+line-height:34px;
+color:#00a388;
+}
+
+.comment-form textarea {
+width:100%;
+height:135px;
+margin-bottom:30px;
+border:1px solid #CCC;
+}
+
+.comment-form input[type='text'] {
+float:right;
+width:415px;
+margin-bottom:8px;
+padding:10px;
+border:1px solid #CCC;
+}
+
+.comment-form button {
+float:left;
+margin-left:85px;
+background-color:#FFF;
+font:bold 18px/24px 'Museo Slab', 'times new roman', serif;
+color:#d11255;
+border:0;
+}
+
+.post-comments h4 {
+font-size:21px;
+color:#00a388;
+margin:20px 0;
+}
+
+.single-title {
+line-height:36px;
+}
+
+.single-comment  {
+padding:20px 0;
+border-top:1px solid #CCC;
+}
+
+.single-comment li {
+list-style-type:none;
+}
+
+.single-comment p {
+font-family:'Museo Sans', arial, helvetica, sans-serif;
+font-size:13px;
+}
+
+.comment-body {
+float:left;
+width:360px;
+}
+
+.children {
+width:100%;
+}
+
+.children .comment-body {
+width:340px;
+margin-left:20px;
+border:0;
+}
+
+.children .single-comment p {
+border-left:20px solid #CCC;
+padding-left:10px;
+
+}
+
+.children .comment-meta p {
+border:0;
+padding-left:0;
+}
+
+.comment-meta {
+float:right;
+margin-left:20px;
+width:130px;
+}
+
+.comment-meta a {
+color:#8C3B3B;
+text-decoration:none;
+}
+
+.btn-comment-reply, a.comment-reply-link {
+display:inline-block;
+margin-top:5px;
+font-family:'Museo Sans', arial, helvetica, sans-serif;
+font-weight:bold;
+color:#d11255;
+}
+
+
+/* - - - *SIDEBAR - - - */
+#sidebar {
+float:right;
+width:165px; /* 205px total */
+font-size:13px;
+color:#FFF;
+line-height:16px;
+padding:30px 10px 25px;
+background:rgb(46,9,39); /* fallback for non rgba browsers */
+background: rgba(46,9,39,0.8);
+
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+
+#sidebar p {
+font-size:13px;
+line-height:16px;
+}
+
+#sidebar h6, #sidebar .h6 {
+margin:25px 0 10px;
+font:bold 13px/18px 'Museo Slab', 'times new roman', serif;
+}
+
+#sidebar a {
+color:#f6f792;
+}
+
+#sidebar nav li {
+margin-bottom:10px;
+}
+
+#sidebar nav a {
+font-weight:bold;
+color:#00a388;
+}
+
+/* - - - *EDITOR - - - */
+.edit-link a {color:red;}
+
+/* - - - *animation - - - */
+@keyframes heart {
+	from, to { transform: none; }
+	50% { transform: scale(1.75); }
+}
+
+.heart-clicked {
+	animation: heart .50s;
+}
+
+/* - - - *addthis button - - - */
+.addthis_button_compact {
+display:none !important;
+}
+
+
+.addthis_counter a {
+font:normal 11px 'Museo Slab','times new roman',serif !important;
+}
+
+a.addthis_button_expanded {
+//margin-top:20px !important;
+}
+
+.addthis_button_expanded {
+background: url("images/sprites.png") no-repeat scroll 0 -65px transparent !important;
+font:normal 11px 'Museo Slab','times new roman',serif !important;
+color: #00A388 !important;
+margin:1px 0 0 12px !important;
+
+padding-top:4px !important;
+padding-left:20px !important;					
+}
+
+.single .addthis_button_expanded {
+margin:0 0 0 -17px !important;
+}

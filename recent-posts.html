@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<title>Recent Posts - NYU Admissions Blog</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!--<link rel="stylesheet" href="http://www.nyu.edu/etc/designs/nyu/ugadmissions/home/css/ug-home.css" type="text/css" media="screen"/>-->
+
+<link rel="stylesheet" href="http://www.nyu.edu/common/css/base.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="ug-home.css" type="text/css" media="screen"/>
+
+
+
+<script>
+$(document).ready(function() {	
+	blogEntries();
+});
+
+function blogEntries() {
+		//var url = 'http://admissions.dev/?feed=json&jsonp=?'; //dev
+		var url = 'http://admissionsblog.nyu.edu/?feed=json&jsonp=?'//prod
+		$.getJSON(url, function(data){
+			for (var i=0; i<=4; i++) {
+				/*
+	           console.log(data[i].title);
+	           console.log(data[i].excerpt);
+	           console.log(data[i].author);
+	           console.log(data[i].avatar);
+				*/
+
+	           postTitle = data[i].title;
+	           postPermalink = data[i].permalink;
+	           postExcerpt = data[i].excerpt;
+	           shortExcerpt = jQuery.trim(postExcerpt).substring(0, 100).trim(this) + "...";
+	           postAuthor = data[i].author;
+	           postAvatar = data[i].avatar;
+	           postDate = data[i].date;
+
+	           avatar = '<div class="post-avatar">' + postAvatar + '</div>';	           
+	           title = '<div class="post-title"><a href="' + postPermalink + '" target="_blank">' + postTitle + '</a></div>';
+	           excerpt = '<div class="post-excerpt">' + shortExcerpt + '</div>';
+	           authorDate = '<span class="post-author">' + postAuthor + '</span> | <span class="post-date">' + postDate + '</span>';
+	           content = '<div class="post-content">' + title + excerpt + authorDate + '</div>';	
+
+		       blogPost = '<div class="blog-post">' + avatar + content +'</div>';    	           	
+		       $('.blog-entry').append(blogPost);           
+	        }   
+	    });
+	}
+</script>
+</head>
+<body>
+
+<div class="blog-entry"></div>
+
+</body>
+</html>
